@@ -1,8 +1,8 @@
-/* Задача: Получить информацию о моделях ПК производителя A. */
+/* Р—Р°РґР°С‡Р°: РџРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РјРѕРґРµР»СЏС… РџРљ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ A. */
 SELECT * FROM product
 WHERE maker = 'A' AND type = 'pc';
 
-/* Пересечение AND */
+/* РџРµСЂРµСЃРµС‡РµРЅРёРµ AND */
 
 SELECT * FROM product
 WHERE maker = 'A'
@@ -10,35 +10,35 @@ INTERSECT
 SELECT * FROM product
 WHERE type = 'pc';
 
-/* Задача: Получить информацию о моделях производителей A и B. */
+/* Р—Р°РґР°С‡Р°: РџРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РјРѕРґРµР»СЏС… РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№ A Рё B. */
 SELECT * FROM product
 WHERE maker = 'A' OR maker = 'B';
 
-/* Объединение OR */
+/* РћР±СЉРµРґРёРЅРµРЅРёРµ OR */
 SELECT * FROM product
 WHERE maker = 'A'
 UNION
 SELECT * FROM product
 WHERE maker = 'B';
 
-/* Задача: Получить информацию о моделях ПК производителей A и B. */
+/* Р—Р°РґР°С‡Р°: РџРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РјРѕРґРµР»СЏС… РџРљ РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№ A Рё B. */
 SELECT * FROM product
 WHERE (maker = 'A' OR maker = 'B') AND type = 'pc';
 
-/* можно выразить через пересечение */
+/* РјРѕР¶РЅРѕ РІС‹СЂР°Р·РёС‚СЊ С‡РµСЂРµР· РїРµСЂРµСЃРµС‡РµРЅРёРµ */
 SELECT * FROM product
 WHERE maker = 'A' OR maker = 'B'
 INTERSECT
 SELECT * FROM product
 WHERE  type = 'pc';
 
-/* эквивалентная форма */
+/* СЌРєРІРёРІР°Р»РµРЅС‚РЅР°СЏ С„РѕСЂРјР° */
 
 SELECT * FROM product
 WHERE (maker = 'A' AND type = 'pc')
     OR (maker = 'B' AND type = 'pc');
 
-/* через объединение */
+/* С‡РµСЂРµР· РѕР±СЉРµРґРёРЅРµРЅРёРµ */
 SELECT * FROM product
 WHERE maker = 'A' AND type = 'pc'
 UNION
